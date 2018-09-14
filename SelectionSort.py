@@ -11,7 +11,7 @@ screen = pygame.display.set_mode((width, height))
 FPS = 60
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
-unsorted = [i for i in range(1, 380)]
+unsorted = [i for i in range(1, 250)]
 shuffle(unsorted)
 n = len(unsorted)
 QUIT_SIGNAL = False
@@ -40,8 +40,8 @@ def SelectionSort(unsorted):
                 min_idx = j
         unsorted[i], unsorted[min_idx] = unsorted[min_idx], unsorted[i]
         sleep(delay)
-        UpdateDisplay(i, (0, 255, 0))
         UpdateDisplay(min_idx)
+        UpdateDisplay(i, (0, 255, 0))
         if QUIT_SIGNAL:
             return
 
