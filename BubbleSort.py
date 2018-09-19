@@ -11,7 +11,7 @@ screen = pygame.display.set_mode((width, height))
 FPS = 60
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
-unsorted = [i for i in range(1, 80)]
+unsorted = [i for i in range(1, 100)]
 shuffle(unsorted)
 n = len(unsorted)
 QUIT_SIGNAL = False

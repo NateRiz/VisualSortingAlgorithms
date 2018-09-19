@@ -32,7 +32,7 @@ def main():
         if sorted(unsorted) != unsorted:
             unsorted = QuickSort(unsorted)
         else:
-            [UpdateDisplay(i) for i in unsorted]
+            [UpdateDisplay(i, j, (0, 255, 0)) for i, j in enumerate(unsorted)]
 
 
 def QuickSort(S, offset=0):
