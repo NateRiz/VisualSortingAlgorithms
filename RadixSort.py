@@ -1,6 +1,6 @@
 import pygame
 import sys
-from random import shuffle
+from random import shuffle, randint
 from math import sqrt, ceil
 from time import sleep
 from threading import Thread
@@ -36,6 +36,7 @@ def RadixSort(unsorted):
     buckets = [[] for _ in range(10)]
 
     for j in range(digits):
+        color = GetRandomColor()
         for i in unsorted:
             buckets[int(str(i).rjust(digits, "0")[digits-j-1])].append(i)
 
@@ -46,13 +47,12 @@ def RadixSort(unsorted):
         [i.clear() for i in buckets]
 
         for i in range(n):
-            UpdateDisplay(i)
+            UpdateDisplay(i, color)
             if QUIT_SIGNAL:
                 return
         sleep(delay)
 
 
-    print(unsorted)
 
 def CheckInput():
     global QUIT_SIGNAL
@@ -62,6 +62,9 @@ def CheckInput():
                 QUIT_SIGNAL = True
                 return
         sleep(1)
+
+def GetRandomColor():
+    return (randint(200,255), randint(200,255), randint(200,255))
 
 
 def UpdateDisplay(i, color=(255, 255, 255)):
